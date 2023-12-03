@@ -1,0 +1,42 @@
+{
+    "data":[
+        {
+            "id":1,
+            "url": "assets/images/CUET_View/21_university_day.jpg",
+            "date":"May 20, 2022",
+            "title":"Bring to the table win-win survival"
+        },{
+            "id":2,
+            "url": "assets/images/CUET_View/21_university_day.jpg",
+            "date":"May 20, 2022",
+            "title":"Bring to the table win-win survival"
+        },{
+            "id":3,
+            "url": "assets/images/CUET_View/15_august_2.jpg",
+            "date":"May 20, 2022",
+            "title":"Bring to the table win-win survival"
+
+        },{
+            "id":4,
+            "url":"assets/images/CUET_View/21_university_day.jpg",
+            "date":"May 20, 2022",
+            "title":"Bring to the table win-win survival"
+        },{
+            "id":5,
+            "url": "assets/images/CUET_View/21_university_day.jpg",
+            "date":"May 20, 2022",
+            "title":"Bring to the table win-win survival"
+        },{
+            "id":6,
+            "url":"assets/images/CUET_View/australia_partnership.jpg",
+            "date":"May 20, 2022",
+            "title":"Bring to the table win-win survival"
+        },
+        {
+            "id":7,
+            "url":"assets/images/CUET_View/australia_partnership.jpg",
+            "date":"May 20, 2022",
+            "title":"Bring to the table win-win survival"
+        }
+    ]
+}
