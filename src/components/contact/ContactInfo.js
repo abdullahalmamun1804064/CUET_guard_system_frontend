@@ -4,7 +4,7 @@ export default class ContactInfo extends React.Component {
     render(){
         return (
             <>
-                <section className="contact-info">
+                <section className="contact-info p-5">
                     <div className="container">
                         <div className="row">
                             <div className="col-xl-4 col-lg-4">

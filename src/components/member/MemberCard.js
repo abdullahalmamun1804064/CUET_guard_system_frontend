@@ -25,7 +25,7 @@ const MemberCard = () => {
 
         <div className=" col-xl-4 py-3 profile-button-div">
             <div>
-                <Link to="/profile" className="thm-btn comment-form__btn full_button profile-button">
+                <Link to="#" className="thm-btn comment-form__btn full_button profile-button">
               Profile
             </Link>  
          </div>

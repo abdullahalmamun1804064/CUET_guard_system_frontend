@@ -9,8 +9,8 @@ const JobPostCreate = () => {
     <>
       <HeaderOne />
       <Breadcrumb
-        heading="Jop Post Create"
-        currentPage="Job Post Create"
+        heading="Gate pass Post Create "
+        currentPage="Gate Pass Post Create"
       />
       <CreateJobPost />
       <FooterTwo />

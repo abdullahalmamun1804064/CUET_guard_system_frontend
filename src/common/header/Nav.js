@@ -42,69 +42,23 @@ const Nav = () => {
     <div>
         <div className="sticky main-menu text-center mr-5 pr-5">
           <nav className="d-flex ">
-            <ul className="main-menu__list relevent ">
-              <li>
-                <Link to={`/member`}>Member</Link>
-              </li>
-              <li>
-                <Link to={`/events`}>Events</Link>
-              </li>
-              <li>
-                <Link to={`/blogs`}>Blog </Link>
-              </li>
-              <li>
-                <Link to={`/gallery`}>Gallery</Link>
-              </li>
-
-               <li>
-                <Link to={`/news`}>News</Link>
-            </li> 
+          <ul className="main-menu__list relevent ">
             <li>
-              <Link to={`/all-alumni`}> Alumnis</Link>
-            </li> 
-
+              <Link to={`/`}>Home </Link>
+            </li>
               <li>
-                <Link to={`/jobs`}>Jobs</Link>
+                <Link to={`/member`}>Roster</Link>
               </li>
-
-              <li
-                className="dropdown"
-                onMouseEnter={() => setIsShown(true)}
-                onMouseLeave={() => setIsShown(false)}
-              >
-                <Link to={`#`}>
-                  <span className="px-2">About us </span>
-                  {isShown ? (
-                    <i className="fa fa-angle-up"></i>
-                  ) : (
-                    <i className="fa fa-angle-down"></i>
-                  )}
-                </Link>
-                <ul>
-                  <li>
-                    <Link to={`/about`}>Who We Are</Link>
-                  </li>
-                  <li>
-                    <Link to={`#`}>History</Link>
-                  </li>
-                  <li>
-                    <Link to={`#`}>Rulebook </Link>
-                  </li>
-                  <li>
-                    <Link to={`/committee`}>Executive Committee </Link>
-                  </li>
-                  <li>
-                    <Link to={`#`}>EC Council </Link>
-                  </li>
-                  <li>
-                    <Link to={`/contact`}>Contact</Link>
-                  </li>
-                </ul>
-              </li>
-
               <li>
-                <Link to={`/notice`}>Notice</Link>
+                <Link to={`/post`}>Post</Link>
               </li>
+            <li>
+              <Link to={`/about`}>About Us</Link>
+            </li>
+            <li>
+              <Link to={`/contact`}>Contact</Link>
+            </li>
+          
 
               {user ? (
                 <div className="">

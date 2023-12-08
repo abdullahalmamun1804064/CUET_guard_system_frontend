@@ -62,7 +62,7 @@ function App() {
         <Route path={`/blogs/:id`} exact element={<BlogDetails />} />
         <Route path={`/jobs`} exact element={<JobPost />} />
         <Route path={`/jobs/:id`} exact element={<JobPostDetails />} />
-        <Route path={`/jobs/create`} exact element={<JobPostCreate/>} />
+        <Route path={`/post`} exact element={<JobPostCreate/>} />
         <Route path={`/contact`} exact element={<Contact />} />
         <Route path={`/member`} exact element={<Member />} />
         <Route path={`/all-alumni`} exact element={<Alumni />} />

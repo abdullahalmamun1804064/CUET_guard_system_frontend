@@ -29,7 +29,7 @@ export const createJobPost = (jobPostData) => async (dispatch) => {
         'Content-Type': 'multipart/form-data'
       }
     }
-    const { data } = await axios.post(`${baseUrl}/jobpost`,jobPostData,config);
+    const { data } = await axios.post(`${baseUrl}/post`,jobPostData,config);
 
     dispatch({ type: CREATE_JOB_POST_SUCCESS, payload: data });
   } catch (error) {
@@ -48,7 +48,7 @@ export const getAllJobPosts = () => async (dispatch) => {
   try {
     dispatch({ type: ALL_JOB_POST_REQUEST });
 
-    const { data } = await axios.get(`${baseUrl}/jobpost`);
+    const { data } = await axios.get(`${baseUrl}/post`);
 
     dispatch({ type: ALL_JOB_POST_SUCCESS, payload: data });
   } catch (error) {
@@ -66,7 +66,7 @@ export const getSingleJobPost = (id) => async (dispatch) => {
   try {
     dispatch({ type: SINGLE_JOB_POST_REQUEST });
 
-    const { data } = await axios.get(`${baseUrl}/jobpost/${id}`);
+    const { data } = await axios.get(`${baseUrl}/post/${id}`);
 
     dispatch({ type: SINGLE_JOB_POST_SUCCESS, payload: data });
   } catch (error) {
@@ -91,7 +91,7 @@ export const updateJobPost = (id, jobPostData) => async (dispatch) => {
       data: jobPostData
     }
 
-    const { data } = await axios.put(`${baseUrl}/jobpost/${id}`, config);
+    const { data } = await axios.put(`${baseUrl}/post/${id}`, config);
 
     dispatch({ type: UPDATE_JOB_POST_SUCCESS, payload: data });
   } catch (error) {
@@ -119,7 +119,7 @@ export const deleteJobPost = (id, userId) => async (dispatch) => {
       data, 
     };
 
-    await axios.delete(`${baseUrl}/jobpost/${id}`, config);
+    await axios.delete(`${baseUrl}/post/${id}`, config);
 
     dispatch({ type: DELETE_JOB_POST_SUCCESS });
   } catch (error) {

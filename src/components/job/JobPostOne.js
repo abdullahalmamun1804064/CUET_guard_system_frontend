@@ -6,7 +6,6 @@ import Loader from '../../common/Loader/Loader';
 import SingleJobCard from './SingleJobCard';
 import { useAlert } from 'react-alert';
 
-
 const JobPostOne = () => {
   const alert = useAlert();
   const { jobPosts, error, loading, } = useSelector(state => state.jobpost);

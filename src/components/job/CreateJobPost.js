@@ -9,12 +9,10 @@ const CreateJobPost = () => {
   const navigate = useNavigate();
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  const [url, setUrl] = useState("");
-  const [image, setImage] = useState(undefined);
+
 
   const [titleValidation, setTitleValidation] = useState(false);
   const [descriptionValidation, setDescriptionValidation] = useState(false);
-  const [urlValidation, setUrlValidation] = useState(false);
 
   const { user, error, loading } = useSelector((state) => state.auth);
 
@@ -28,12 +26,7 @@ const CreateJobPost = () => {
   const handleDescriptionChange = (e) => {
     setDescription(e.target.value);
   };
-  const handleUrlChange = (e) => {
-    setUrl(e.target.value);
-  };
-  const handleImageChange = (e) => {
-    setImage(e.target.value);
-  };
+
 
   useEffect(() => {
     if (error) {
@@ -45,23 +38,18 @@ const CreateJobPost = () => {
   const handleSubmit = (e) => {
     setTitleValidation(true);
     setDescriptionValidation(true);
-    setUrlValidation(true);
     e.preventDefault();
 
     const formData = {
       title: title,
       description: description,
-      applicationUrl: url,
-      image: image,
       postedBy: user._id,
     };
-    if (title && description && url) {
+    if (title && description ) {
       dispatch(createJobPost(formData));
       setTitle("");
       setDescription("");
-      setUrl("");
-      setImage("");
-      navigate("/jobs");
+      navigate("/");
     }
   };
 
@@ -77,7 +65,7 @@ const CreateJobPost = () => {
                 <div className="contact-page__left">
                   <div className="section-title text-left">
                     <h2 className="section-title__title text-center">
-                      Create a Job Post{" "}
+                      Create a Gate Pass Post{" "}
                     </h2>
                   </div>
                   <div className="contact-page__form">
@@ -90,8 +78,8 @@ const CreateJobPost = () => {
                           <div className="comment-form__input-box pb-2 my-3">
                             <input
                               type="text"
-                              placeholder="Job Title"
-                              name="jobtitle"
+                                placeholder="Post title"
+                              name="Posttitle"
                               value={title}
                               onChange={handleTitleChange}
                             />
@@ -107,7 +95,7 @@ const CreateJobPost = () => {
                           <div className="comment-form__input-box pb-2 my-3">
                             <textarea
                               type="text"
-                              placeholder="Job Description"
+                              placeholder="Past Description"
                               name="jobdescription"
                               value={description}
                               onChange={handleDescriptionChange}
@@ -121,34 +109,9 @@ const CreateJobPost = () => {
                             )}
                         </div>
 
-                        <div className="col-xl-12">
-                          <div className="comment-form__input-box pb-2 my-3">
-                            <input
-                              type="text"
-                              placeholder="Job URL"
-                              name="joburl"
-                              value={url}
-                              onChange={handleUrlChange}
-                            />
-                          </div>
-                          {url.length === 0 && urlValidation && (
-                            <p className="pb-5 text-danger">
-                              Job Url is empty!!
-                            </p>
-                          )}
-                        </div>
+                     
 
-                        <div className="col-xl-12">
-                          <div className="comment-form__input-box">
-                            <input
-                              type="file"
-                              placeholder="description"
-                              name="description"
-                              value={image}
-                              onChange={handleImageChange}
-                            />
-                          </div>
-                        </div>
+                       
 
                         <div className="col-xl-12 ">
                           <div className="comment-form__btn-box d-flex justify-content-center">

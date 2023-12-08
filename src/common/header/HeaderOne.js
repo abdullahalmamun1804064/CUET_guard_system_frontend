@@ -8,13 +8,11 @@ const HeaderOne = () => {
     const [data, setData] = useState([])
     useEffect(() => {
         const fetchData = async () => {
-            // const res = await axios.get("/db/admin/topBar.json")
-            // setData(res.data)
+       
             setData(TopBar.data)
         }
         fetchData()
     }, [])
-    // const contents = TopBar.data;
 
 
     const publicUrl = process.env.PUBLIC_URL + '/';
@@ -40,9 +38,7 @@ const HeaderOne = () => {
                             </div>
                             <div className="main-header__top-right">
                                 <ul className="list-unstyled main-header__top-right-content text-white">
-                                    {/* <li><Link to={`/login`}>Login</Link></li>
-                                    <li><Link to={process.env.PUBLIC_URL + `/`}>Help You</Link></li>
-                                    <SearchButton /> */}
+                                  
                                     <li className='d-flex'>
                                         <div className="icon px-3">
                                             <span className="icon-envelope"></span>
