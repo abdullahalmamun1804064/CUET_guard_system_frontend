@@ -1,21 +1,23 @@
+
+
 import React from 'react';
 import HeaderOne from '../common/header/HeaderOne';
 import Breadcrumb from '../common/breadcrumb/Breadcrumb';
 import FooterTwo from '../common/footer/FooterTwo';
-import JobPostOne from '../components/job/JobPostOne';
+import GatePassDetailsComponent from '../components/gatePass/GatePassDetailsComponent';
 
-const BlogVersionOne = () => {
+const GatePassPostDetails = () => {
   return (
     <>
       <HeaderOne />
       <Breadcrumb
-        heading="Jop Post"
-        currentPage="Job Post"
+        heading="Post Details"
+        currentPage="Post Details"
       />
-      <JobPostOne />
+      <GatePassDetailsComponent />
       <FooterTwo />
     </>
   )
 }
 
-export default BlogVersionOne;
+export default GatePassPostDetails;

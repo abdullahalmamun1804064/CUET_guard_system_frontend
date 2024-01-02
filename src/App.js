@@ -11,9 +11,7 @@ import Contact from "./pages/Contact";
 import Error from "./pages/Error";
 import Member from "./pages/Member";
 import ScrollToTopRoute from './components/scroll-to-top-route/ScrollToTopRoute';
-import JobPost from './pages/JobPost';
-import JobPostDetails from './pages/JobPostDetails';
-import JobPostCreate from './pages/JobPostCreate';
+import GatePassPostCreate from './pages/GatePassPostCreate';
 import Profile from './pages/Profile';
 import MemberProfile from './pages/MemberProfile';
 import Login from './pages/Login';
@@ -27,6 +25,7 @@ import 'swiper/css/effect-fade';
 
 import { loadUser } from './redux/actions/userActions'
 import store from './store'
+import GatePassPostDetails from './pages/GatePassPostDetails';
 
 
 function App() {
@@ -43,7 +42,9 @@ function App() {
       <Routes>
         <Route path={`/`} exact element={<HomeDefault />} />
         <Route path={`/about`} exact element={<About />} />
-        <Route path={`/post`} exact element={<JobPostCreate/>} />
+        <Route path={`/post`} exact element={<GatePassPostCreate />} />
+        <Route path={`/post/:id`} exact element={<GatePassPostDetails />} />
+
         <Route path={`/contact`} exact element={<Contact />} />
         <Route path={`/member`} exact element={<Member />} />
     

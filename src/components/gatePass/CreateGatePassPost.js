@@ -5,7 +5,7 @@ import { useAlert } from "react-alert";
 import { createJobPost, clearErrors } from "../../redux/actions/jobPostAction";
 import Loader from "../../common/Loader/Loader";
 
-const CreateJobPost = () => {
+const CreateGatePassPost = () => {
   const navigate = useNavigate();
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
@@ -45,7 +45,7 @@ const CreateJobPost = () => {
       description: description,
       postedBy: user._id,
     };
-    if (title && description ) {
+    if (title && description) {
       dispatch(createJobPost(formData));
       setTitle("");
       setDescription("");
@@ -78,7 +78,7 @@ const CreateJobPost = () => {
                           <div className="comment-form__input-box pb-2 my-3">
                             <input
                               type="text"
-                                placeholder="Post title"
+                              placeholder="Post title"
                               name="Posttitle"
                               value={title}
                               onChange={handleTitleChange}
@@ -109,9 +109,9 @@ const CreateJobPost = () => {
                             )}
                         </div>
 
-                     
 
-                       
+
+
 
                         <div className="col-xl-12 ">
                           <div className="comment-form__btn-box d-flex justify-content-center">
@@ -137,4 +137,4 @@ const CreateJobPost = () => {
   );
 };
 
-export default CreateJobPost;
+export default CreateGatePassPost;

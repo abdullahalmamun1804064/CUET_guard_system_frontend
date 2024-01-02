@@ -2,9 +2,9 @@ import React from 'react';
 import HeaderOne from '../common/header/HeaderOne';
 import Breadcrumb from '../common/breadcrumb/Breadcrumb';
 import FooterTwo from '../common/footer/FooterTwo';
-import CreateJobPost from '../components/job/CreateJobPost';
+import CreateGatePassPost from '../components/gatePass/CreateGatePassPost';
 
-const JobPostCreate = () => {
+const GatePassPostCreate = () => {
   return (
     <>
       <HeaderOne />
@@ -12,10 +12,10 @@ const JobPostCreate = () => {
         heading="Gate pass Post Create "
         currentPage="Gate Pass Post Create"
       />
-      <CreateJobPost />
+      <CreateGatePassPost />
       <FooterTwo />
     </>
   )
 }
 
-export default JobPostCreate;
+export default GatePassPostCreate;

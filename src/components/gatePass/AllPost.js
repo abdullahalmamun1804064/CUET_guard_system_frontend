@@ -6,7 +6,7 @@ import { formatDateTimeWithAMPM } from "../../utils/timeDateFormate";
 
 
 import { useDispatch, useSelector } from 'react-redux';
-import { getAllJobPosts, getSingleJobPost, clearErrors } from '../../redux/actions/jobPostAction';
+import { getAllJobPosts, clearErrors } from '../../redux/actions/jobPostAction';
 import Loader from '../../common/Loader/Loader';
 
 const AllApprovePost = () => {
@@ -17,11 +17,10 @@ const AllApprovePost = () => {
     dispatch(getAllJobPosts());
 
     if (error) {
-      alert.error(error);
       dispatch(clearErrors());
     }
 
-  }, [dispatch, alert, error])
+  }, [dispatch, error])
 
   console.log(jobPosts);
 
@@ -47,15 +46,18 @@ const AllApprovePost = () => {
 
                           <div>
                             <h3>
-                              <a href="event-details.html">
+                             
+
+
+                              <Link to={`post/${post._id}`} className="read-more">
                                 {post?.title}
-                              </a>
+                              </Link>
                             </h3>
                             <p>
                               {post?.description?.slice(0, 250)}
                             </p>
 
-                            <Link to={`event-details/${post.id}`} className="read-more">
+                            <Link to={`post/${post._id}`} className="read-more">
                               Find out more
                               <FontAwesomeIcon
                                 icon={faArrowRight}
