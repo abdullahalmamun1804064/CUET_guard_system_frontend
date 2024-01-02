@@ -22,24 +22,8 @@ const Member = () => {
            
        
             <div>
-              < MemberCard />
-              < MemberCard />
-              < MemberCard />
-              < MemberCard />
-              < MemberCard />
-              < MemberCard />
-              < MemberCard />
-              < MemberCard />
-              < MemberCard />
-              < MemberCard />
-              < MemberCard />
-              < MemberCard />
-              < MemberCard />
-              < MemberCard />
-              < MemberCard />
-              < MemberCard />
-              < MemberCard />
-              < MemberCard />
+       
+             
               < MemberCard />
               < MemberCard />
               < MemberCard />

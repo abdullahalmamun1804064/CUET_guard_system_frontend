@@ -12,7 +12,7 @@ import Loader from '../../common/Loader/Loader';
 const AllApprovePost = () => {
   const { jobPosts, error, loading, } = useSelector(state => state.jobpost);
   const dispatch = useDispatch();
- 
+
   useEffect(() => {
     dispatch(getAllJobPosts());
 
@@ -32,7 +32,7 @@ const AllApprovePost = () => {
           <section className="events-area_event events-area bg-color ptb-100">
             <div className="container">
               <div>
-                <h1 className="text-center pt-5">All Approve Application</h1><hr />
+                <h1 className="text-center pt-5"></h1><hr />
               </div>
               <div className="row align-items-center">
                 <div className="">
@@ -42,7 +42,7 @@ const AllApprovePost = () => {
                         <li key={index} className="d-flex my-5 pb-3 ">
                           <div className="events-date">
                             <span className="mb-2">{formatDateTimeWithAMPM(post?.date).slice(0, 3)}</span>
-                            <span>{formatDateTimeWithAMPM(post?.date).slice(9,16)}</span>
+                            <span>{formatDateTimeWithAMPM(post?.date).slice(7, 16)}</span>
                           </div>
 
                           <div>
@@ -63,9 +63,9 @@ const AllApprovePost = () => {
                               />
                             </Link>
                           </div>
-                        
+
                         </li>
-                     
+
                       ))}
                     </ul>
                   </div>

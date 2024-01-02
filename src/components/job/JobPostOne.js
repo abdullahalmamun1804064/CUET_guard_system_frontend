@@ -4,10 +4,8 @@ import { Link } from 'react-router-dom';
 import { getAllJobPosts,getSingleJobPost, clearErrors } from '../../redux/actions/jobPostAction';
 import Loader from '../../common/Loader/Loader';
 import SingleJobCard from './SingleJobCard';
-import { useAlert } from 'react-alert';
 
 const JobPostOne = () => {
-  const alert = useAlert();
   const { jobPosts, error, loading, } = useSelector(state => state.jobpost);
   const dispatch = useDispatch();
 
@@ -15,11 +13,10 @@ const JobPostOne = () => {
     dispatch(getAllJobPosts());
 
     if (error) {
-      alert.error(error);
       dispatch(clearErrors());
     }
 
-  }, [dispatch, alert, error])
+  }, [dispatch, error])
 
 
 

@@ -51,7 +51,10 @@ const Nav = () => {
               </li>
               <li>
                 <Link to={`/post`}>Post</Link>
-              </li>
+            </li>
+            <li>
+              <Link to={`/application`}>Applications</Link>
+            </li>
             <li>
               <Link to={`/about`}>About Us</Link>
             </li>
@@ -75,7 +78,10 @@ const Nav = () => {
                       <></>
                     )}
 
-                    <ul className="profile-dropdown">
+                  <ul className="profile-dropdown">
+                    <li>
+                      <Link to={`/my-application`}>My application</Link>
+                    </li>
                       <li>
                         <Link to={`/profile`}>Profile</Link>
                       </li>
