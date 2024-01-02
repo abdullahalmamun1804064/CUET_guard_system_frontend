@@ -2433,7 +2433,7 @@
 "@types/yargs@^16.0.0":
   version "16.0.5"
   resolved "https://registry.npmjs.org/@types/yargs/-/yargs-16.0.5.tgz"
-  integrity sha512-AxO/ADJOBFJScHbWhq2xAhlWP24rY4aCEG/NFaMvbT3X2MgRsLjhjQwsn0Zi5zn0LG9jUhCCZMeX9Dkuw6k+vQ==
+  integrity sha512-AxO/ADGATE_PASSFJScHbWhq2xAhlWP24rY4aCEG/NFaMvbT3X2MgRsLjhjQwsn0Zi5zn0LG9jUhCCZMeX9Dkuw6k+vQ==
   dependencies:
     "@types/yargs-parser" "*"
 

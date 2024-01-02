@@ -1,20 +1,20 @@
 import {
-  CREATE_JOB_POST_REQUEST,
-  CREATE_JOB_POST_SUCCESS,
-  CREATE_JOB_POST_FAIL,
-  UPDATE_JOB_POST_REQUEST,
-  UPDATE_JOB_POST_SUCCESS,
-  UPDATE_JOB_POST_FAIL,
-  DELETE_JOB_POST_REQUEST,
-  DELETE_JOB_POST_SUCCESS,
-  DELETE_JOB_POST_FAIL,
+  CREATE_GATE_PASS_POST_REQUEST,
+  CREATE_GATE_PASS_POST_SUCCESS,
+  CREATE_GATE_PASS_POST_FAIL,
+  UPDATE_GATE_PASS_POST_REQUEST,
+  UPDATE_GATE_PASS_POST_SUCCESS,
+  UPDATE_GATE_PASS_POST_FAIL,
+  DELETE_GATE_PASS_POST_REQUEST,
+  DELETE_GATE_PASS_POST_SUCCESS,
+  DELETE_GATE_PASS_POST_FAIL,
   CLEAR_ERRORS,
-  ALL_JOB_POST_REQUEST,
-  ALL_JOB_POST_SUCCESS,
-  ALL_JOB_POST_FAIL,
-  SINGLE_JOB_POST_REQUEST,
-  SINGLE_JOB_POST_SUCCESS,
-  SINGLE_JOB_POST_FAIL,
+  ALL_GATE_PASS_POST_REQUEST,
+  ALL_GATE_PASS_POST_SUCCESS,
+  ALL_GATE_PASS_POST_FAIL,
+  SINGLE_GATE_PASS_POST_REQUEST,
+  SINGLE_GATE_PASS_POST_SUCCESS,
+  SINGLE_GATE_PASS_POST_FAIL,
 } from "../constants/gatePassPostConstant";
 const initialState = {
   jobPosts: [],
@@ -26,17 +26,17 @@ const initialState = {
 export const jobPostReducer = (state = initialState, action) => {
   switch (action.type) {
 
-    case CREATE_JOB_POST_REQUEST:
-    case UPDATE_JOB_POST_REQUEST:
-    case DELETE_JOB_POST_REQUEST:
-    case ALL_JOB_POST_REQUEST:
-    case SINGLE_JOB_POST_REQUEST:
+    case CREATE_GATE_PASS_POST_REQUEST:
+    case UPDATE_GATE_PASS_POST_REQUEST:
+    case DELETE_GATE_PASS_POST_REQUEST:
+    case ALL_GATE_PASS_POST_REQUEST:
+    case SINGLE_GATE_PASS_POST_REQUEST:
       return {
         ...state,
         loading: true,
       };
 
-    case CREATE_JOB_POST_SUCCESS:
+    case CREATE_GATE_PASS_POST_SUCCESS:
       return {
         ...state,
         loading: false,
@@ -45,7 +45,7 @@ export const jobPostReducer = (state = initialState, action) => {
       };
 
 
-    case UPDATE_JOB_POST_SUCCESS:
+    case UPDATE_GATE_PASS_POST_SUCCESS:
       const updatedJobPosts = state.jobPosts.map((post) =>
         post._id === action.payload._id ? action.payload : post
       );
@@ -58,7 +58,7 @@ export const jobPostReducer = (state = initialState, action) => {
       };
 
 
-    case DELETE_JOB_POST_SUCCESS:
+    case DELETE_GATE_PASS_POST_SUCCESS:
       const filteredJobPosts = state.jobPosts.filter(
         (post) => post._id !== action.payload
       );
@@ -69,7 +69,7 @@ export const jobPostReducer = (state = initialState, action) => {
         jobPosts: filteredJobPosts,
       };
 
-    case ALL_JOB_POST_SUCCESS:
+    case ALL_GATE_PASS_POST_SUCCESS:
       return {
         ...state,
         loading: false,
@@ -77,7 +77,7 @@ export const jobPostReducer = (state = initialState, action) => {
         jobPosts: action.payload,
       };
 
-    case SINGLE_JOB_POST_SUCCESS:
+    case SINGLE_GATE_PASS_POST_SUCCESS:
       return {
         ...state,
         loading: false,
@@ -86,11 +86,11 @@ export const jobPostReducer = (state = initialState, action) => {
       };
 
 
-    case CREATE_JOB_POST_FAIL:
-    case UPDATE_JOB_POST_FAIL:
-    case DELETE_JOB_POST_FAIL:
-    case ALL_JOB_POST_FAIL:
-    case SINGLE_JOB_POST_FAIL:
+    case CREATE_GATE_PASS_POST_FAIL:
+    case UPDATE_GATE_PASS_POST_FAIL:
+    case DELETE_GATE_PASS_POST_FAIL:
+    case ALL_GATE_PASS_POST_FAIL:
+    case SINGLE_GATE_PASS_POST_FAIL:
       return { ...state, loading: false, error: action.payload };
 
     case CLEAR_ERRORS:

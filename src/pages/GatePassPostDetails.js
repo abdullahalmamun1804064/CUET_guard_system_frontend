@@ -4,7 +4,7 @@ import React from 'react';
 import HeaderOne from '../common/header/HeaderOne';
 import Breadcrumb from '../common/breadcrumb/Breadcrumb';
 import FooterTwo from '../common/footer/FooterTwo';
-import GatePassDetailsComponent from '../components/gatePass/GatePassDetailsComponent';
+import GatePassDetailsComponent from '../components/gatePass/GatePassPostDetailsComponent';
 
 const GatePassPostDetails = () => {
   return (

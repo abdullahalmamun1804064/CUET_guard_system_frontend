@@ -26,6 +26,8 @@ import 'swiper/css/effect-fade';
 import { loadUser } from './redux/actions/userActions'
 import store from './store'
 import GatePassPostDetails from './pages/GatePassPostDetails';
+import Application from './pages/Application';
+import MyApplication from './pages/MyApplication';
 
 
 function App() {
@@ -44,6 +46,9 @@ function App() {
         <Route path={`/about`} exact element={<About />} />
         <Route path={`/post`} exact element={<GatePassPostCreate />} />
         <Route path={`/post/:id`} exact element={<GatePassPostDetails />} />
+        <Route path={`/application`} exact element={<Application />} />
+        <Route path={`/my-application`} exact element={<MyApplication />} />
+
 
         <Route path={`/contact`} exact element={<Contact />} />
         <Route path={`/member`} exact element={<Member />} />

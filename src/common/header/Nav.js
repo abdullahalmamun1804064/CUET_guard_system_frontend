@@ -4,20 +4,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { useAlert } from "react-alert";
 import { useEffect } from "react";
 import { clearErrors, logout } from "../../redux/actions/userActions";
-import Loader from "../Loader/Loader";
+const publicUrl = process.env.PUBLIC_URL + '/';
 
 const Nav = () => {
-  const [showMenu, setShowMenu] = useState(false);
-  const [isShown, setIsShown] = useState(false);
-
-  const handleShowMenu = () => {
-    setShowMenu((preve) => !preve);
-  };
 
   const { isAuthenticated, error, user, loading } = useSelector(
     (state) => state.auth,
   );
-  //console.log(user);
+
 
   const alert = useAlert();
   const dispatch = useDispatch();
@@ -52,9 +46,14 @@ const Nav = () => {
               <li>
                 <Link to={`/post`}>Post</Link>
             </li>
+
+            {user?.role === "officer" &&
             <li>
               <Link to={`/application`}>Applications</Link>
             </li>
+            }
+            
+
             <li>
               <Link to={`/about`}>About Us</Link>
             </li>
@@ -65,17 +64,19 @@ const Nav = () => {
 
               {user ? (
                 <div className="">
-                  {/* <ul className="main-menu__list relevent "> */}
                   <li className="dropdown">
                     {user.avatar ? (
                       <img
                         src={user.avatar.url}
                         alt={user.name}
-                        onClick={handleShowMenu}
+                        
                       className="user-pic"
                       />
                     ) : (
-                      <></>
+                      <>
+                        <img src={publicUrl + "assets/images/resources/logo.png"} alt="" />
+
+                      </>
                     )}
 
                   <ul className="profile-dropdown">
@@ -86,18 +87,18 @@ const Nav = () => {
                         <Link to={`/profile`}>Profile</Link>
                       </li>
                       <li>
-                        <Link to={`#`}>
-                          {" "}
-                          <p className=" " onClick={logoutHandler}>
+                        <Link to={`#`} onClick={logoutHandler}>
+                        
+                           
                             Logout
-                          </p>
+                          
                         </Link>
                       </li>
                     </ul>
                   </li>
                 </div>
               ) : (
-                // !loading && (
+               
                   <ul className="main-menu__list relevent px-5">
                     <li>
                       <Link to={`/login`} className="">

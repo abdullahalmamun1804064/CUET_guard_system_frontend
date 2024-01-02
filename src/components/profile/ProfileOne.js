@@ -4,7 +4,6 @@ import "./Profile.css";
 
 import { useDispatch, useSelector } from "react-redux";
 import Loader from "../../common/Loader/Loader";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { userDetails, clearErrors } from "../../redux/actions/userActions";
 
 const ProfileOne = () => {
@@ -15,13 +14,9 @@ const ProfileOne = () => {
   useEffect(() => {
     dispatch(userDetails(id));
     if (error) {
-      alert.error(error);
       dispatch(clearErrors());
     }
-  }, [alert, error]);
-
-  // console.log(singleUser);
-  // console.log("--------++++++++++++++++");
+  }, [dispatch, error, id]);
 
 
   return (
@@ -111,30 +106,30 @@ const ProfileOne = () => {
                         </div>
                       </li>
                       <li>
-                          <div className="left">
-                            <h4>Job Field:</h4>
-                          </div>
-                          <div className="right">
-                            {singleUser?.jobfield ? (
+                        <div className="left">
+                          <h4>Job Field:</h4>
+                        </div>
+                        <div className="right">
+                          {singleUser?.jobfield ? (
 
-                              <p>{singleUser?.jobfield}</p>
-                          
-                            ):<>--</>}
-                          </div>
-                        </li>
-                        <li>
-                          <div className="left">
-                            <h4>Job Organization:</h4>
-                          </div>
-                          <div className="right">
-                            {singleUser?.joborg ? (
+                            <p>{singleUser?.jobfield}</p>
 
-                              <p>{singleUser?.joborg}</p>
+                          ) : <>--</>}
+                        </div>
+                      </li>
+                      <li>
+                        <div className="left">
+                          <h4>Job Organization:</h4>
+                        </div>
+                        <div className="right">
+                          {singleUser?.joborg ? (
 
-                            ) : <>--</>}
-                          </div>
-                        </li>
-                      </ul>
+                            <p>{singleUser?.joborg}</p>
+
+                          ) : <>--</>}
+                        </div>
+                      </li>
+                    </ul>
                   </div>
                 </div>
               </div>

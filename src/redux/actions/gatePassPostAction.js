@@ -1,21 +1,21 @@
 import axios from 'axios';
 import {
-  CREATE_JOB_POST_REQUEST,
-  CREATE_JOB_POST_SUCCESS,
-  CREATE_JOB_POST_FAIL,
-  UPDATE_JOB_POST_REQUEST,
-  UPDATE_JOB_POST_SUCCESS,
-  UPDATE_JOB_POST_FAIL,
-  DELETE_JOB_POST_REQUEST,
-  DELETE_JOB_POST_SUCCESS,
-  DELETE_JOB_POST_FAIL,
+  CREATE_GATE_PASS_POST_REQUEST,
+  CREATE_GATE_PASS_POST_SUCCESS,
+  CREATE_GATE_PASS_POST_FAIL,
+  UPDATE_GATE_PASS_POST_REQUEST,
+  UPDATE_GATE_PASS_POST_SUCCESS,
+  UPDATE_GATE_PASS_POST_FAIL,
+  DELETE_GATE_PASS_POST_REQUEST,
+  DELETE_GATE_PASS_POST_SUCCESS,
+  DELETE_GATE_PASS_POST_FAIL,
   CLEAR_ERRORS,
-  ALL_JOB_POST_REQUEST,
-  ALL_JOB_POST_SUCCESS,
-  ALL_JOB_POST_FAIL,
-  SINGLE_JOB_POST_REQUEST,
-  SINGLE_JOB_POST_SUCCESS,
-  SINGLE_JOB_POST_FAIL,
+  ALL_GATE_PASS_POST_REQUEST,
+  ALL_GATE_PASS_POST_SUCCESS,
+  ALL_GATE_PASS_POST_FAIL,
+  SINGLE_GATE_PASS_POST_REQUEST,
+  SINGLE_GATE_PASS_POST_SUCCESS,
+  SINGLE_GATE_PASS_POST_FAIL,
 } from '../constants/gatePassPostConstant';
 import { baseUrl } from '../../utils/baseUrl';
 
@@ -23,7 +23,7 @@ import { baseUrl } from '../../utils/baseUrl';
 
 export const createJobPost = (jobPostData) => async (dispatch) => {
   try {
-    dispatch({ type: CREATE_JOB_POST_REQUEST });
+    dispatch({ type: CREATE_GATE_PASS_POST_REQUEST });
     const config = {
       headers: {
         'Content-Type': 'multipart/form-data'
@@ -31,10 +31,10 @@ export const createJobPost = (jobPostData) => async (dispatch) => {
     }
     const { data } = await axios.post(`${baseUrl}/post`, jobPostData, config);
 
-    dispatch({ type: CREATE_JOB_POST_SUCCESS, payload: data });
+    dispatch({ type: CREATE_GATE_PASS_POST_SUCCESS, payload: data });
   } catch (error) {
     dispatch({
-      type: CREATE_JOB_POST_FAIL,
+      type: CREATE_GATE_PASS_POST_FAIL,
       payload:
         error.response && error.response.data.message
           ? error.response.data.message
@@ -46,14 +46,14 @@ export const createJobPost = (jobPostData) => async (dispatch) => {
 
 export const getAllJobPosts = () => async (dispatch) => {
   try {
-    dispatch({ type: ALL_JOB_POST_REQUEST });
+    dispatch({ type: ALL_GATE_PASS_POST_REQUEST });
 
     const { data } = await axios.get(`${baseUrl}/post`);
 
-    dispatch({ type: ALL_JOB_POST_SUCCESS, payload: data });
+    dispatch({ type: ALL_GATE_PASS_POST_SUCCESS, payload: data });
   } catch (error) {
     dispatch({
-      type: ALL_JOB_POST_FAIL,
+      type: ALL_GATE_PASS_POST_FAIL,
       payload:
         error.response && error.response.data.message
           ? error.response.data.message
@@ -64,14 +64,14 @@ export const getAllJobPosts = () => async (dispatch) => {
 
 export const getSingleJobPost = (id) => async (dispatch) => {
   try {
-    dispatch({ type: SINGLE_JOB_POST_REQUEST });
+    dispatch({ type: SINGLE_GATE_PASS_POST_REQUEST });
 
     const { data } = await axios.get(`${baseUrl}/post/${id}`);
 
-    dispatch({ type: SINGLE_JOB_POST_SUCCESS, payload: data });
+    dispatch({ type: SINGLE_GATE_PASS_POST_SUCCESS, payload: data });
   } catch (error) {
     dispatch({
-      type: SINGLE_JOB_POST_FAIL,
+      type: SINGLE_GATE_PASS_POST_FAIL,
       payload:
         error.response && error.response.data.message
           ? error.response.data.message
@@ -83,7 +83,7 @@ export const getSingleJobPost = (id) => async (dispatch) => {
 
 export const updateJobPost = (id, jobPostData) => async (dispatch) => {
   try {
-    dispatch({ type: UPDATE_JOB_POST_REQUEST });
+    dispatch({ type: UPDATE_GATE_PASS_POST_REQUEST });
     const config = {
       headers: {
         'Content-Type': 'multipart/form-data'
@@ -93,10 +93,10 @@ export const updateJobPost = (id, jobPostData) => async (dispatch) => {
 
     const { data } = await axios.put(`${baseUrl}/post/${id}`, config);
 
-    dispatch({ type: UPDATE_JOB_POST_SUCCESS, payload: data });
+    dispatch({ type: UPDATE_GATE_PASS_POST_SUCCESS, payload: data });
   } catch (error) {
     dispatch({
-      type: UPDATE_JOB_POST_FAIL,
+      type: UPDATE_GATE_PASS_POST_FAIL,
       payload:
         error.response && error.response.data.message
           ? error.response.data.message
@@ -108,7 +108,7 @@ export const updateJobPost = (id, jobPostData) => async (dispatch) => {
 
 export const deleteJobPost = (id, userId) => async (dispatch) => {
   try {
-    dispatch({ type: DELETE_JOB_POST_REQUEST });
+    dispatch({ type: DELETE_GATE_PASS_POST_REQUEST });
 
     const data = { userId };
 
@@ -121,10 +121,10 @@ export const deleteJobPost = (id, userId) => async (dispatch) => {
 
     await axios.delete(`${baseUrl}/post/${id}`, config);
 
-    dispatch({ type: DELETE_JOB_POST_SUCCESS });
+    dispatch({ type: DELETE_GATE_PASS_POST_SUCCESS });
   } catch (error) {
     dispatch({
-      type: DELETE_JOB_POST_FAIL,
+      type: DELETE_GATE_PASS_POST_FAIL,
       payload:
         error.response && error.response.data.message
           ? error.response.data.message
