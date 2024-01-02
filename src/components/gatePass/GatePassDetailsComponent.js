@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { getSingleJobPost } from '../../redux/actions/jobPostAction';
+import { getSingleJobPost } from '../../redux/actions/gatePassPostAction';
 import Loader from '../../common/Loader/Loader';
 import { formatDateTimeWithAMPM } from '../../utils/timeDateFormate';
 
@@ -39,7 +39,7 @@ const GatePassDetailsComponent = () => {
                     <div className="blog-details__content">
 
                       <h2 className="blog-details__title">{singleJobPost?.post?.title}</h2>
-                    
+
                       <h4 className='pb-2'>Description : </h4>
                       <p className="blog-details__text-1 pb-5">{singleJobPost?.post?.description} </p>
 

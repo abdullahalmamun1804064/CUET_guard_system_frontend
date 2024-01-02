@@ -16,7 +16,7 @@ import {
   SINGLE_JOB_POST_REQUEST,
   SINGLE_JOB_POST_SUCCESS,
   SINGLE_JOB_POST_FAIL,
-} from '../constants/jobPostConstant';
+} from '../constants/gatePassPostConstant';
 import { baseUrl } from '../../utils/baseUrl';
 
 
@@ -29,7 +29,7 @@ export const createJobPost = (jobPostData) => async (dispatch) => {
         'Content-Type': 'multipart/form-data'
       }
     }
-    const { data } = await axios.post(`${baseUrl}/post`,jobPostData,config);
+    const { data } = await axios.post(`${baseUrl}/post`, jobPostData, config);
 
     dispatch({ type: CREATE_JOB_POST_SUCCESS, payload: data });
   } catch (error) {
@@ -110,13 +110,13 @@ export const deleteJobPost = (id, userId) => async (dispatch) => {
   try {
     dispatch({ type: DELETE_JOB_POST_REQUEST });
 
-    const data = { userId }; 
+    const data = { userId };
 
     const config = {
       headers: {
         'Content-Type': 'application/json',
       },
-      data, 
+      data,
     };
 
     await axios.delete(`${baseUrl}/post/${id}`, config);

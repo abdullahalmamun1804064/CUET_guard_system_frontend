@@ -15,7 +15,7 @@ import {
   SINGLE_JOB_POST_REQUEST,
   SINGLE_JOB_POST_SUCCESS,
   SINGLE_JOB_POST_FAIL,
-} from "../constants/jobPostConstant";
+} from "../constants/gatePassPostConstant";
 const initialState = {
   jobPosts: [],
   singleJobPost: null,
@@ -25,7 +25,7 @@ const initialState = {
 
 export const jobPostReducer = (state = initialState, action) => {
   switch (action.type) {
-   
+
     case CREATE_JOB_POST_REQUEST:
     case UPDATE_JOB_POST_REQUEST:
     case DELETE_JOB_POST_REQUEST:
@@ -35,7 +35,7 @@ export const jobPostReducer = (state = initialState, action) => {
         ...state,
         loading: true,
       };
-    
+
     case CREATE_JOB_POST_SUCCESS:
       return {
         ...state,
@@ -43,8 +43,8 @@ export const jobPostReducer = (state = initialState, action) => {
         error: null,
         jobPosts: [...state.jobPosts, action.payload],
       };
-    
-    
+
+
     case UPDATE_JOB_POST_SUCCESS:
       const updatedJobPosts = state.jobPosts.map((post) =>
         post._id === action.payload._id ? action.payload : post
@@ -56,8 +56,8 @@ export const jobPostReducer = (state = initialState, action) => {
         error: null,
         jobPosts: updatedJobPosts,
       };
-    
-    
+
+
     case DELETE_JOB_POST_SUCCESS:
       const filteredJobPosts = state.jobPosts.filter(
         (post) => post._id !== action.payload
@@ -68,7 +68,7 @@ export const jobPostReducer = (state = initialState, action) => {
         error: null,
         jobPosts: filteredJobPosts,
       };
-   
+
     case ALL_JOB_POST_SUCCESS:
       return {
         ...state,

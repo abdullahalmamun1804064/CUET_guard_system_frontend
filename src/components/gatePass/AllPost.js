@@ -6,7 +6,7 @@ import { formatDateTimeWithAMPM } from "../../utils/timeDateFormate";
 
 
 import { useDispatch, useSelector } from 'react-redux';
-import { getAllJobPosts, clearErrors } from '../../redux/actions/jobPostAction';
+import { getAllJobPosts, clearErrors } from '../../redux/actions/gatePassPostAction';
 import Loader from '../../common/Loader/Loader';
 
 const AllApprovePost = () => {
@@ -46,7 +46,7 @@ const AllApprovePost = () => {
 
                           <div>
                             <h3>
-                             
+
 
 
                               <Link to={`post/${post._id}`} className="read-more">

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useAlert } from "react-alert";
-import { createJobPost, clearErrors } from "../../redux/actions/jobPostAction";
+import { createJobPost, clearErrors } from "../../redux/actions/gatePassPostAction";
 import Loader from "../../common/Loader/Loader";
 
 const CreateGatePassPost = () => {
